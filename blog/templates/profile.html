@@ -1,0 +1,18 @@
+{%  extends 'base.html' %}
+
+{% block content %}
+
+    <a href="{{ url_for('new_post')}}">Create new post</a></br>
+    <h3>{{ current_user.username }}</h3>
+    <p>{{ current_user.email}}</p></hr>
+
+    {% include 'inc/form_error.html' %}
+    <form action="" method="post">
+        {{  form.csrf_token }}
+        {{ form.username.label }}: {{ form.username }}</br></br>
+        {{ form.password.label }}: {{ form.password }}</br></br>
+        <input type="submit" value="Update">
+    </form>
+
+
+{% endblock %}
